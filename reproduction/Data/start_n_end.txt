@@ -1,0 +1,15 @@
+MTnum   orient     start    stop
+
+
+Starts:
+    TTG    357
+    ATG    2386
+    GTG    1507
+    TOTAL    4250
+
+
+Stops:
+    TAA    647
+    TAG    1290
+    TGA    2313
+    TOTAL    4250
