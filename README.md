@@ -21,7 +21,7 @@ A snapshot of my original project directory for my work related to
 that paper is in a
 [separate repository on github](https://github.com/kbroman/Project_Lamichhane2003).
 
-LW: the results generated from the reproduction code can be found [here](https://github.com/lwa19/Paper_ReScience2020/blob/master/reproduction/reproduction.html)
+LW: the results generated from the reproduction code can be found [here](https://github.com/lwa19/Paper_ReScience2020/reproduction/reproduction.html)
 
 The primary software is the R/negenes package for R, available on
 [github](https://github.com/kbroman/negenes) and
