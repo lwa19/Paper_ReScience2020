@@ -532,8 +532,6 @@ if(!file.exists(local_file)) {
     download.file(url, local_file)
 }
 
-# LW: link download didn't work for me. I downloaded the file into the directory myself. Would it be better if it is just included in a directory (on GitHub) to start out with?
-
 # read original table 6
 tab6_orig <- readxl::read_excel(local_file, sheet=1, skip=2)
 tab6_orig <- as.data.frame(tab6_orig)
