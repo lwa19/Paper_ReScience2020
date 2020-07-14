@@ -167,6 +167,11 @@ I will first run the Perl script `findTA.pl` which uses data from
 system("perl findTA.pl")
 ```
 
+*LW: It might be helpful to explain here (more specifically) what 
+the Perl script does? Also, I'm not sure if you want to include the 
+commandline printouts. They are always consistent for me so maybe 
+this is not very important.*
+
 ## Project structure
 
 The reproduction of this work included a number of challenges: lack of
@@ -203,6 +208,14 @@ of the published paper).
 version of the data handling rule and is the basis for one row of
 Table 2 and all of the rest of the analyses.
 
+*LW: I think this chunk should be moved to the top before all the file
+renaming happened. The explanation for Nov02 being "the basis for one row 
+of Table 2 and all of the rest of the analyses” is a bit confusing to me. 
+I think instead of making vague gestures like so, it would be more helpful
+to clarify “Nov02 adds an extra parameter” instead of “adds an extra row” 
+or whatever you meant to say here.*
+
+
 ## Run MCMC
 
 The analysis proceeded in two steps: run a `prepareData.R` script to
@@ -238,6 +251,11 @@ save(data100nostop, data100stop, data90, data70, data60, data80,
 setwd("..")
 ```
 
+*LW: I understand resetting the wd in each code chunk is necessary for the R scripts sourced
+to run correctly, but I still think modifying those R scripts to all use the same reference
+wd ('/reproduction in this case') would make it a lot more clear and consistent.*
+
+
 I will now run the MCMC. (I actually cache these results and only run
 them if needed.) Again, we copied over the
 [`Sept02/R/analysis.R`](https://github.com/kbroman/Paper_ReScience2020/blob/master/original/Sept02/R/analysis.R) script as
@@ -267,12 +285,19 @@ save(res100nostop, res90, res80, res70, res60,
 setwd("..")
 ```
 
+*LW: since MCMC here takes a good while to run, I think it might be helpful to include
+a note reminding the people using the code or include a sample run time so people have 
+a rough idea of how long it might take.*
+
+
 ```{r really_run_sept02_mcmc, echo=FALSE, results="hide"}
 if(file.exists("R/sept02_results.RData")) {
     load("R/sept02_results.RData")
 } else {
 <<run_sept02_mcmc>>
 }
+
+# LW: "<<>>" syntax doesn't work in rstudio. Might be markdown specific?
 ```
 
 
@@ -453,9 +478,19 @@ wh <- cbind(data.frame(MTnum=rownames(wh)), wh)
 wh <- wh[rev(order(wh[,3], -as.numeric(rownames(wh)))), ]
 wh[14:15,] <- wh[15:14,]
 wh[19:20,] <- wh[20:19,]
+# I am not quite seeing the point of the two lines above. 
+# The reverse order does not apply to all rows with the same probability.
+# It seems very particular to this dataset. Is it just to make the table
+# here look the exact same as the one in the original publication? 
+
 genes <- wh
 genes[,3] <- genes[,3] * 100 # convert to percent
 ```
+
+*LW: I got confused when I was running through it because the first table generated here is
+in fact supplement table 6 and not table 3. I think the legend of table 2 in the 2020 paper
+if added here would make a lot more sense about the distinction between table 3 and table s6.*
+
 
 Here is the reconstruction of Table 3. The results match the [published
 version](https://bit.ly/lamichhane2003_table3).
@@ -496,6 +531,8 @@ local_file <- "Tabs/1432Table6.xls"
 if(!file.exists(local_file)) {
     download.file(url, local_file)
 }
+
+# LW: link download didn't work for me. I downloaded the file into the directory myself. Would it be better if it is just included in a directory (on GitHub) to start out with?
 
 # read original table 6
 tab6_orig <- readxl::read_excel(local_file, sheet=1, skip=2)
@@ -545,6 +582,7 @@ otherwise one of the gene families gets left off. (The new estimate of
 the enrichment probability for one family has dipped slightly below 75%.)
 
 ```{r table4}
+# LW: did you miss the "clear environment" line here?
 load("R/nov02_data.RData")
 load("R/nov02_results.RData")
 
