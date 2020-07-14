@@ -4,8 +4,8 @@
 
 This repository is my contribution to the
 [ReScience Ten Years Reproducibility
-Challenge](http://rescience.github.io/ten-years). I'm
-seeking to reproduce the following paper.
+Challenge](http://rescience.github.io/ten-years). I'm seeking to
+reproduce the following paper.
 
 > Lamichhane G, Zignol M, Blades NJ, Geiman DE, Dougherty A, Broman
 > KW, Bishai WR (2003) A post-genomic method for predicting essential
