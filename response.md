@@ -21,14 +21,14 @@ single R Markdown file giving a start-to-finish set of steps for
 generating the results. We ran the code on the high-performance
 computing cluster run by the University of Chicago’s Research
 Computing Center; see [Leah's fork of Karl’s repository][repo-fork]
-for details, and in particular
-[Leah's reproduction of the report][reproduction-copy]. The only issue
-was that there was some knitr-specific syntax in the code chunks,
-e.g., `<<run_sept02_mcmc>>`, that gave RStudio some trouble depending
-on how the code was run. For compatibility it would be best to avoid
-such syntax. The remaining comments are some areas where we found the
-code difficult to follow, with some small suggestions for improvement
-(say, for the 50-year Reproducibility Challenge):
+for details, and in particular [Leah's reproduction of the
+report][reproduction-copy]. The only issue was that there was some
+knitr-specific syntax in the code chunks, e.g., `<<run_sept02_mcmc>>`,
+that gave RStudio some trouble depending on how the code was run. For
+compatibility it would be best to avoid such syntax. The remaining
+comments are some areas where we found the code difficult to follow,
+with some small suggestions for improvement (say, for the 50-year
+Reproducibility Challenge):
 
 + Changing the working directory multiple times during the analysis
   makes it hard to keep track of the file paths, which files are being
@@ -49,7 +49,9 @@ code difficult to follow, with some small suggestions for improvement
 + Since the MCMC step takes a some time to run, it would be helpful to
   give a warning, and some sense of how long it should take to run.
 
-+ There is some bookkeeping at the beginning---moving and renaming files---and perhaps it would have been better to commit these changes..
++ There is some bookkeeping at the beginning---moving and renaming
+  files---and perhaps it would have been better to commit these
+  changes to the git repository, and not include them in the script.
 
 + All the code and results are saved to a single folder,
   `Paper_ReScience2020/reproduction/R`. This is what we see:
@@ -71,9 +73,16 @@ code difficult to follow, with some small suggestions for improvement
   It would have been helpful to create folders such as "code", "data"
   and "output" to distinguish the inputs from the outputs.
 
-Please assign most of the credit for this review to Leah Wang
-(@lwa19). She worked through Karl’s [report][reproduction], reproduced
-his results and provided most of the feedback on the code.
++ When you said, "Here is the reconstruction of Table 3", what you
+  really meant, we believe, is Supplement Table 6," which is the same
+  as Table 3, but with the longer list of genes. There were a couple
+  spots where the explanations weren't very clear, at least without
+  having gone through the remainder of the analysis; please see
+  [the comments included in the R Markdown][reproduction-copy].
+
+Please assign most of the credit for this review to Leah Wang (@lwa19).
+She worked through Karl’s [report][reproduction], reproduced his
+results and provided most of the feedback on the code.
 
 [article]: https://kbroman.org/Paper_ReScience2020/article/article.pdf
 [repo]: https://github.com/kbroman/Paper_ReScience2020
