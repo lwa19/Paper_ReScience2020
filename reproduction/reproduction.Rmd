@@ -1,4 +1,4 @@
----
+x---
 title:  "Reproduction of Lamichhane et al. (2003)"
 author: "Karl Broman"
 date:   "`r Sys.Date()`"
@@ -251,10 +251,10 @@ save(data100nostop, data100stop, data90, data70, data60, data80,
 setwd("..")
 ```
 
-*LW: I understand resetting the wd in each code chunk is necessary for the R scripts sourced
-to run correctly, but I still think modifying those R scripts to all use the same reference
-wd ('/reproduction in this case') would make it a lot more clear and consistent.*
-
+*LW: I understand resetting the wd in each code chunk is necessary for
+the R scripts sourced to run correctly, but I still think modifying
+those R scripts to all use the same reference wd ('/reproduction in
+this case') would make it a lot more clear and consistent.*
 
 I will now run the MCMC. (I actually cache these results and only run
 them if needed.) Again, we copied over the
@@ -285,9 +285,10 @@ save(res100nostop, res90, res80, res70, res60,
 setwd("..")
 ```
 
-*LW: since MCMC here takes a good while to run, I think it might be helpful to include
-a note reminding the people using the code or include a sample run time so people have 
-a rough idea of how long it might take.*
+*LW: since MCMC here takes a good while to run, I think it might be
+helpful to include a note reminding the people using the code or
+include a sample run time so people have a rough idea of how long it
+might take.*
 
 
 ```{r really_run_sept02_mcmc, echo=FALSE, results="hide"}
@@ -487,10 +488,10 @@ genes <- wh
 genes[,3] <- genes[,3] * 100 # convert to percent
 ```
 
-*LW: I got confused when I was running through it because the first table generated here is
-in fact supplement table 6 and not table 3. I think the legend of table 2 in the 2020 paper
-if added here would make a lot more sense about the distinction between table 3 and table s6.*
-
+*LW: I got confused when I was running through it because the first
+table generated here is in fact supplement table 6 and not table 3. I
+think the legend of table 2 in the 2020 paper if added here would make
+a lot more sense about the distinction between table 3 and table s6.*
 
 Here is the reconstruction of Table 3. The results match the [published
 version](https://bit.ly/lamichhane2003_table3).
